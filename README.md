@@ -37,8 +37,6 @@ There are some very noticeable advantages for having REST APIs stateless.
 
 **REST**
 
-REST stands for Representational State Transfer
-
 * REST stands for Representational State Transfer
   
 * REST permits different data format such as Plain text, HTML, XML, JSON, etc. But the most preferred format for transferring data is JSON.
