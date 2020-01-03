@@ -32,3 +32,51 @@ There are some very noticeable advantages for having REST APIs stateless.
 3) A stateless API is also easy to cache as well. A specific software can decide whether or not to cache the result of an HTTP request just by looking at that one request. There’s no nagging uncertainty that state from a previous request might affect the cacheability of this one. It improves the performance of applications.
 
 4) The server never loses track of “where” each client is in the application because the client sends all necessary information with each request.
+
+## Difference between REST and SOAP
+
+**REST**
+
+REST stands for Representational State Transfer
+
+* REST stands for Representational State Transfer
+  
+* REST permits different data format such as Plain text, HTML, XML, JSON, etc. But the most preferred format for transferring data is JSON.
+  
+* Statelessness – If there is no need to maintain a state of information from one request to another then REST should be used. If you need a proper information flow wherein some information from one request needs to flow into another then SOAP is more suited for that purpose. We can take the example of any online purchasing site. These sites normally need the user first to add items which need to be purchased to a cart. All of the cart items are then transferred to the payment page in order to complete the purchase. This is an example of an application which needs the state feature. The state of the cart items needs to be transferred to the payment page for further processing.
+  
+* REST can make use of SOAP as the underlying protocol for web services, because in the end it is just an architectural pattern.
+
+* REST does not need much bandwidth when requests are sent to the server. REST messages mostly just consist of JSON messages. Below is an example of a JSON message passed to a web server. You can see that the size of the message is comparatively smaller to SOAP.
+```
+  {"city":"Mumbai","state":"Maharastra"}
+```
+
+
+**SOAP**
+
+* SOAP stands for Simple Object Access Protocol 
+
+* SOAP can only work with XML format. As seen from SOAP messages, all data passed is in XML format.
+
+* Stateful operations – if the application has a requirement that state needs to be maintained from one request to another, then the SOAP 1.2 standard provides the WS* structure to support such requirements.
+
+* SOAP cannot make use of REST since SOAP is a protocol and REST is an architectural pattern.
+
+* SOAP requires more bandwidth for its usage. Since SOAP Messages contain a lot of information inside of it, the amount of data transfer using SOAP is generally a lot.
+
+```
+  <?xml version="1.0"?>
+  <SOAP-ENV:Envelope 
+  xmlns:SOAP-ENV
+  ="http://www.w3.org/2001/12/soap-envelope" 
+  SOAP-ENV:encodingStyle
+  =" http://www.w3.org/2001/12/soap-encoding">
+  <soap:Body>
+  <Demo.guru99WebService
+  xmlns="http://tempuri.org/">
+    <EmployeeID>int</EmployeeID>
+    </Demo.guru99WebService>
+  </soap:Body>
+  </SOAP-ENV:Envelope>
+```
