@@ -78,3 +78,17 @@ There are some very noticeable advantages for having REST APIs stateless.
   </soap:Body>
   </SOAP-ENV:Envelope>
 ```
+
+**Error Code**
+Sequence 
+200 - Ok
+201 - Created
+401 - Unauthorized
+404 - requestd resoruce /endpoint not found
+400 - bad request ( body is missing )
+405 - Method Not Allowed ( invoking POST insead of GET )
+403 - Forbidden - The client did not have permission to access the requested resource.
+
+
+![alt text](resterrorcode.png)
+
